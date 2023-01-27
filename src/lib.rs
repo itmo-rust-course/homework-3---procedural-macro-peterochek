@@ -225,7 +225,7 @@ fn gen_build_fn(struct_name: &syn::Ident, fields: &[FieldRepr]) -> proc_macro2::
         .iter()
         .map(|field| {
             let name = field.name;
-            let error = format!("Field '{}' is not initialized.", name);
+            let error = format!("Field {name} is not initialized.");
             if !field.optional
                 && field
                     .repeated
